@@ -1,0 +1,20 @@
+server:
+  port: 8181
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles: 
+    active: dev
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: com/idea/spring/test/springtest/*Mapper.xml
+  typeAliasesPackage: com.idea.spring.test.springtest.pojo
+#热部署生效
+spring.devtools.restart.enabled: true
+#设置重启的目录
+#spring.devtools.restart.additional-paths: src/main/java
+#classpath目录下的WEB-INF文件夹内容修改不重启
+spring.devtools.restart.exclude: WEB-INF/**
+
